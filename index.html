@@ -18,23 +18,78 @@
 
 	<body>
 		<div class="wrapper clearfix">
-			<div class="player-0-panel active">
-				<div class="player-name" id="name-0">Player 1</div>
-				<div class="player-score" id="score-0">43</div>
+			<section class="player-0-panel active">
+				<h1 class="player-name" id="name-0">Player 1</h1>
+				<p class="player-score" id="score-0">43</p>
 				<div class="player-current-box">
-					<div class="player-current-label">Current</div>
-					<div class="player-current-score" id="current-0">11</div>
+					<p class="player-current-label">Current</p>
+					<p class="player-current-score" id="current-0">11</p>
 				</div>
-			</div>
+			</section>
 
-			<div class="player-1-panel">
-				<div class="player-name" id="name-1">Player 2</div>
-				<div class="player-score" id="score-1">72</div>
+			<section class="player-1-panel">
+				<h1 class="player-name" id="name-1">Player 2</h1>
+				<p class="player-score" id="score-1">72</p>
 				<div class="player-current-box">
-					<div class="player-current-label">Current</div>
-					<div class="player-current-score" id="current-1">0</div>
+					<p class="player-current-label">Current</p>
+					<p class="player-current-score" id="current-1">0</p>
 				</div>
-			</div>
+			</section>
+
+			<button class="rules-btn">
+				<svg class="open-svg" viewBox="0 0 500 500">
+					<path
+						d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"
+					/>
+				</svg>
+				<svg class="close-svg" viewBox="0 0 320 512">
+					<path
+						d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"
+					/>
+				</svg>
+			</button>
+			<section class="rules-panel">
+				<h2>GAME RULES</h2>
+				<ul class="rules-list">
+					<li>
+						<p>The game has 2 players, playing in rounds</p>
+					</li>
+					<li>
+						<p>
+							In each turn, a player rolls a dice as many times as he whishes. Each result
+							gets added to his ROUND score
+						</p>
+					</li>
+					<li>
+						<p>
+							BUT, if the player rolls a 1, all his ROUND score gets lost. After that,
+							it's the next player's turn
+						</p>
+					</li>
+					<li>
+						<p>
+							A player looses his ENTIRE score when he rolls two 6 in a row. After that,
+							it's the next player's turn
+						</p>
+					</li>
+					<li>
+						<p>
+							The player can choose to 'Hold', which means that his ROUND score gets added
+							to his GLOBAL score. After that, it's the next player's turn
+						</p>
+					</li>
+					<li>
+						<p>
+							Players can set the 'Final Score' at the start of the game. Default is 100
+						</p>
+					</li>
+					<li>
+						<p>
+							The first player to reach the winning points on GLOBAL score wins the game
+						</p>
+					</li>
+				</ul>
+			</section>
 
 			<button class="btn-new">
 				<svg class="svg-class" viewBox="0 0 500 500">
@@ -44,6 +99,7 @@
 				</svg>
 				New game
 			</button>
+
 			<button class="btn-roll">
 				<svg class="svg-class" viewBox="0 0 512 512">
 					<path
@@ -52,6 +108,7 @@
 				</svg>
 				Roll dice
 			</button>
+
 			<button class="btn-hold">
 				<svg class="svg-class" viewBox="0 0 576 512">
 					<path
@@ -60,6 +117,8 @@
 				</svg>
 				Hold
 			</button>
+
+			<input type="number" placeholder="Final score" class="final-score" />
 
 			<img src="dice-5.png" alt="Dice" class="dice" />
 		</div>
