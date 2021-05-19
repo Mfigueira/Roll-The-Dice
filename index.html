@@ -1,128 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, user-scalable=no"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Lato:100,300,600"
-			rel="stylesheet"
-			type="text/css"
-		/>
-		<link type="text/css" rel="stylesheet" href="style.css" />
-		<link rel="icon" href="dice_ico.ico" />
-		<title>Roll The Dice</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/img/dice_ico.ico" />
+    <title>Roll The Dice</title>
+  </head>
 
-	<body>
-		<div class="wrapper clearfix">
-			<section class="player-0-panel active">
-				<h1 class="player-name" id="name-0">Player 1</h1>
-				<p class="player-score" id="score-0">43</p>
-				<div class="player-current-box">
-					<p class="player-current-label">Current</p>
-					<p class="player-current-score" id="current-0">11</p>
-				</div>
-			</section>
+  <body>
+    <main>
+      <button class="btn rules-btn">
+        <span class="open-rules">ℹ</span>
+        <span class="close-rules">Ⅹ</span>
+      </button>
+      <section class="rules-panel">
+        <h2>GAME RULES</h2>
+        <ul class="rules-list">
+          <li>Set the WINNING SCORE (default is 50 points)</li>
+          <li>
+            Each player in it's turn rolls a dice as many times as wished.
+            Results adds up to the ROUND until the player 'Holds' that score to
+            it's TOTAL. Then it's the next Player's turn
+          </li>
+          <li>
+            If a Player rolls a 1 or double 6s, all it's ROUND score (not yet
+            held) gets lost, and then it's the next Player's turn
+          </li>
+          <li>The first Player to reach the FINAL SCORE wins!</li>
+        </ul>
+      </section>
 
-			<section class="player-1-panel">
-				<h1 class="player-name" id="name-1">Player 2</h1>
-				<p class="player-score" id="score-1">72</p>
-				<div class="player-current-box">
-					<p class="player-current-label">Current</p>
-					<p class="player-current-score" id="current-1">0</p>
-				</div>
-			</section>
+      <section class="player-0-panel active">
+        <h2 class="player-name" id="name-0">Player 1</h2>
+        <p class="player-score" id="score-0">43</p>
+        <div class="player-current-box">
+          <p class="player-current-label">Current</p>
+          <p class="player-current-score" id="current-0">11</p>
+        </div>
+      </section>
 
-			<button class="rules-btn">
-				<svg class="open-svg" viewBox="0 0 500 500">
-					<path
-						d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z"
-					/>
-				</svg>
-				<svg class="close-svg" viewBox="0 0 320 512">
-					<path
-						d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z"
-					/>
-				</svg>
-			</button>
-			<section class="rules-panel">
-				<h2>GAME RULES</h2>
-				<ul class="rules-list">
-					<li>
-						<p>The game has 2 players, playing in rounds</p>
-					</li>
-					<li>
-						<p>
-							In each turn, a player rolls a dice as many times as he whishes. Each result
-							gets added to his ROUND score
-						</p>
-					</li>
-					<li>
-						<p>
-							BUT, if the player rolls a 1, all his ROUND score gets lost. After that,
-							it's the next player's turn
-						</p>
-					</li>
-					<li>
-						<p>
-							A player looses his ENTIRE score when he rolls two 6 in a row. After that,
-							it's the next player's turn
-						</p>
-					</li>
-					<li>
-						<p>
-							The player can choose to 'Hold', which means that his ROUND score gets added
-							to his GLOBAL score. After that, it's the next player's turn
-						</p>
-					</li>
-					<li>
-						<p>
-							Players can set the 'Final Score' at the start of the game. Default is 100
-						</p>
-					</li>
-					<li>
-						<p>
-							The first player to reach the winning points on GLOBAL score wins the game
-						</p>
-					</li>
-				</ul>
-			</section>
+      <section class="player-1-panel">
+        <h2 class="player-name" id="name-1">Player 2</h2>
+        <p class="player-score" id="score-1">72</p>
+        <div class="player-current-box">
+          <p class="player-current-label">Current</p>
+          <p class="player-current-score" id="current-1">0</p>
+        </div>
+      </section>
 
-			<button class="btn-new">
-				<svg class="svg-class" viewBox="0 0 500 500">
-					<path
-						d="M384 250v12c0 6.6-5.4 12-12 12h-98v98c0 6.6-5.4 12-12 12h-12c-6.6 0-12-5.4-12-12v-98h-98c-6.6 0-12-5.4-12-12v-12c0-6.6 5.4-12 12-12h98v-98c0-6.6 5.4-12 12-12h12c6.6 0 12 5.4 12 12v98h98c6.6 0 12 5.4 12 12zm120 6c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-32 0c0-119.9-97.3-216-216-216-119.9 0-216 97.3-216 216 0 119.9 97.3 216 216 216 119.9 0 216-97.3 216-216z"
-					/>
-				</svg>
-				New game
-			</button>
+      <img src="/img/dice-5.png" alt="dice" class="dice" />
+      <button class="btn btn-new">🔄 New game</button>
+      <button class="btn btn-roll">🎲 Roll dice</button>
+      <button class="btn btn-hold">📥 Hold</button>
 
-			<button class="btn-roll">
-				<svg class="svg-class" viewBox="0 0 512 512">
-					<path
-						d="M492 8h-10c-6.627 0-12 5.373-12 12v110.627C426.929 57.261 347.224 8 256 8 123.228 8 14.824 112.338 8.31 243.493 7.971 250.311 13.475 256 20.301 256h10.016c6.353 0 11.646-4.949 11.977-11.293C48.157 132.216 141.097 42 256 42c82.862 0 154.737 47.077 190.289 116H332c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h160c6.627 0 12-5.373 12-12V20c0-6.627-5.373-12-12-12zm-.301 248h-10.015c-6.352 0-11.647 4.949-11.977 11.293C463.841 380.158 370.546 470 256 470c-82.608 0-154.672-46.952-190.299-116H180c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H20c-6.627 0-12 5.373-12 12v160c0 6.627 5.373 12 12 12h10c6.627 0 12-5.373 12-12V381.373C85.071 454.739 164.777 504 256 504c132.773 0 241.176-104.338 247.69-235.493.339-6.818-5.165-12.507-11.991-12.507z"
-					/>
-				</svg>
-				Roll dice
-			</button>
+      <input type="number" placeholder="Set Score" class="final-score" />
+    </main>
 
-			<button class="btn-hold">
-				<svg class="svg-class" viewBox="0 0 576 512">
-					<path
-						d="M566.633 169.37L406.63 9.392C386.626-10.612 352 3.395 352 32.022v72.538C210.132 108.474 88 143.455 88 286.3c0 84.74 49.78 133.742 79.45 155.462 24.196 17.695 58.033-4.917 49.7-34.51C188.286 304.843 225.497 284.074 352 280.54V352c0 28.655 34.654 42.606 54.63 22.63l160.003-160c12.489-12.5 12.489-32.76 0-45.26zM384 352V248.04c-141.718.777-240.762 15.03-197.65 167.96C154.91 393 120 351.28 120 286.3c0-134.037 131.645-149.387 264-150.26V32l160 160-160 160zm37.095 52.186c2.216-1.582 4.298-3.323 6.735-5.584 7.68-7.128 20.17-1.692 20.17 8.787V464c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h172.146c6.612 0 11.954 5.412 11.852 12.04-.084 5.446-4.045 10.087-9.331 11.396-9.462 2.343-18.465 4.974-27.074 7.914-1.25.427-2.555.65-3.876.65H48c-8.837 0-16 7.163-16 16v352c0 8.837 7.163 16 16 16h352c8.837 0 16-7.163 16-16v-50.002c0-3.905 1.916-7.543 5.095-9.812z"
-					/>
-				</svg>
-				Hold
-			</button>
-
-			<input type="number" placeholder="Final score" class="final-score" />
-
-			<img src="dice-5.png" alt="Dice" class="dice" />
-		</div>
-
-		<script src="app.js"></script>
-	</body>
+    <script src="app.js"></script>
+  </body>
 </html>
