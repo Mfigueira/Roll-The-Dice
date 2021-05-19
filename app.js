@@ -69,7 +69,7 @@ const endGame = () => {
 
 const showDice = rolled => {
   dice.style.display = 'block';
-  dice.src = `/img/dice-${rolled}.png`;
+  dice.src = `img/dice-${rolled}.png`;
 };
 
 const hideDice = () => {
