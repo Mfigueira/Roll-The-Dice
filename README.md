@@ -6,7 +6,7 @@ This is Roll The Dice!
 
 A simple Web Game with the sole purpose of having fun!
 
-I developed it as part of coding challenge for a JavaScript course, adding some personal style.
+I developed it as part of a coding challenge for a JavaScript course, adding some personal style.
 
 ## Technologies
 
