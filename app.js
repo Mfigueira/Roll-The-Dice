@@ -78,18 +78,18 @@ const hideDice = () => {
 
 const setInitialState = () => {
   scores = [0, 0];
-  currentScore = 0;
-  activePlayer = 0;
+  currentScore = activePlayer = 0;
   isGameOn = true;
   lastRolled = undefined;
   winningScore = 50;
 };
 
 const resetGame = () => {
-  score0.textContent = '0';
-  score1.textContent = '0';
-  current0.textContent = '0';
-  current1.textContent = '0';
+  score0.textContent =
+    score1.textContent =
+    current0.textContent =
+    current1.textContent =
+      '0';
   name0.textContent = 'Player 1';
   name1.textContent = 'Player 2';
   player0Panel.classList.remove('winner');
