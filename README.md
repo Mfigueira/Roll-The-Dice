@@ -16,7 +16,7 @@ I developed it as part of a coding challenge for a JavaScript course, adding som
 
 ## Can I play with it?
 
-Please! It's hosted here: [Roll The Dice](https://mfigueira.github.io/Roll-The-Dice/).
+Please! It's hosted here: [Roll The Dice](https://mfigueira.github.io/roll-the-dice/).
 
 Rules are simple and explained on the page.
 
