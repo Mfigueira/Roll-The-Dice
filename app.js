@@ -41,7 +41,7 @@ const accumulateTotalScore = () => {
 const changePlayer = () => {
   currentScore = 0;
   document.querySelector(`#current-${activePlayer}`).textContent = currentScore;
-  activePlayer = activePlayer === 0 ? 1 : 0;
+  activePlayer = !activePlayer ? 1 : 0;
   lastRolled = undefined;
 
   player0Panel.classList.toggle('active');
@@ -50,8 +50,9 @@ const changePlayer = () => {
 
 const setWinningScore = () => {
   if (!finalScore.disabled) {
-    if (finalScore.value > 0) winningScore = finalScore.value;
-    else finalScore.value = winningScore;
+    finalScore.value > 0
+      ? (winningScore = finalScore.value)
+      : (finalScore.value = winningScore);
     finalScore.disabled = true;
   }
 };
@@ -72,9 +73,7 @@ const showDice = rolled => {
   dice.src = `./img/dice-${rolled}.png`;
 };
 
-const hideDice = () => {
-  dice.style.display = 'none';
-};
+const hideDice = () => (dice.style.display = 'none');
 
 const setInitialState = () => {
   scores = [0, 0];
@@ -119,8 +118,9 @@ rollBtn.addEventListener('click', () => {
     rolled = Math.trunc(Math.random() * 6) + 1;
     showDice(rolled);
 
-    if (rolled === 1 || (rolled === 6 && lastRolled === 6)) changePlayer();
-    else accumulateCurrentScore(rolled);
+    rolled === 1 || (rolled === 6 && lastRolled === 6)
+      ? changePlayer()
+      : accumulateCurrentScore(rolled);
   }
 });
 
@@ -129,12 +129,11 @@ holdBtn.addEventListener('click', () => {
     setWinningScore();
     accumulateTotalScore();
     hideDice();
-
-    if (scores[activePlayer] >= winningScore) endGame();
-    else changePlayer();
+    scores[activePlayer] >= winningScore ? endGame() : changePlayer();
   }
 });
 
-rulesBtn.addEventListener('click', function () {
-  this.classList.toggle('open');
+rulesBtn.addEventListener('click', e => {
+  // e.currentTarget === this
+  e.currentTarget.classList.toggle('open');
 });
